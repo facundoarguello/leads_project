@@ -2,3 +2,7 @@ fastapi[standard]
 pytest
 pydantic
 sqlalchemy
+psycopg2
+psycopg2-binary
+dependency-injector==4.41.0
+alembic

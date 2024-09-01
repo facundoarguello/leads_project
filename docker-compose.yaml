@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:14-alpine
+    container_name: db_postgres_dk
+    restart: always
+    environment:
+      PGUSER: 'facu'
+      POSTGRES_DB: 'opendev'
+      POSTGRES_USER: 'facu'
+      POSTGRES_PASSWORD: 'SimplePassword'
+      POSTGRES_INITDB_ARGS: '--auth-host=scram-sha-256'
+    ports:
+      - 5432:5432
+    expose:
+      - '5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: api_be
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  pg_data:

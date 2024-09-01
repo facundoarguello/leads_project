@@ -8,7 +8,7 @@ class LeadsInput(BaseModel):
     address: str
     phone: str
     subject: str
-    course_time: int 
+    course_time: datetime 
     career: str
     inscription: datetime
     number_courses: int
@@ -20,8 +20,7 @@ class LeadsOutput(BaseModel):
     address: str
     phone: str
     subject: str
-    course_time: int 
+    course_time: datetime 
     career: str
     inscription: datetime
     number_courses: int
-    updated: datetime

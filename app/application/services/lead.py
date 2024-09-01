@@ -17,6 +17,7 @@ class LeadService(LeadUseCases):
 
     def leads_catalog(self) -> List[LeadEntity]:
         leads = self.lead_repository.get_all()
+        print("lll",leads)
         return leads
 
    

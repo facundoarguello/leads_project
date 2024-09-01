@@ -11,4 +11,23 @@ class LeadSQLAlchemyRepository(LeadRepository):
         self.session = session
 
     def get_all(self) -> List[LeadEntity]:
-        return [LeadEntityFactory.create(**lead) for lead in self.session.query(LeadDBModel).all()]
+        
+        return [LeadEntityFactory.create(id=lead.id,fullname=lead.fullname,
+            email=lead.email,
+            address=lead.address,
+            phone=lead.phone,
+            subject=lead.subject,
+            course_time=lead.course_time,
+            career=lead.career,
+            inscription=lead.inscription,
+            number_courses=lead.number_courses,
+            ) for lead in self.session.query(LeadDBModel).all()]
+    
+    def get_by_id(self, id: str):
+        pass
+
+    def add(self, lead: LeadEntity):
+        pass
+
+    def update(self, lead: LeadEntity):
+        pass
