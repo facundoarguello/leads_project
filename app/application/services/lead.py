@@ -17,7 +17,17 @@ class LeadService(LeadUseCases):
 
     def leads_catalog(self) -> List[LeadEntity]:
         leads = self.lead_repository.get_all()
-        print("lll",leads)
         return leads
+    def lead_detail(self, id: int) -> LeadEntity:
+        lead = self.lead_repository.get_by_id(id)
+        return lead
+    
+    def add_lead(self, lead: LeadEntity) -> LeadEntity:
+        product = self.lead_repository.add(lead)
+
+        return product
+    def update_lead(self, lead: LeadEntity) -> LeadEntity:
+        lead = self.lead_repository.update(lead)
+        return lead
 
    

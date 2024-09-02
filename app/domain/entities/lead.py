@@ -17,6 +17,6 @@ class LeadEntity:
 class LeadEntityFactory:
 
     @staticmethod
-    def create(id: int, fullname: str, address: str,email: str, phone: str, subject: str,
+    def create(id: int | None, fullname: str, address: str,email: str, phone: str, subject: str,
                 course_time: int, career:str ,inscription: datetime, number_courses:int) -> LeadEntity:
         return LeadEntity(id, fullname, email, address,phone, subject, course_time, career, inscription, number_courses)

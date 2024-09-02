@@ -11,7 +11,7 @@ class LeadRepository(ABC):
         raise NotImplemented
 
     @abstractmethod
-    def get_by_id(self, id: str) -> LeadEntity:
+    def get_by_id(self, id: int) -> LeadEntity:
         raise NotImplemented
 
     @abstractmethod

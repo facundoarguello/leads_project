@@ -19,3 +19,12 @@ class LeadUseCases(ABC):
     @abstractmethod
     def leads_catalog(self) -> List[LeadEntity]:
         raise NotImplemented
+    @abstractmethod
+    def lead_detail(self, id: int) -> LeadEntity:
+        raise NotImplemented
+    @abstractmethod
+    def add_lead(self, lead: LeadEntity) -> LeadEntity:
+        raise NotImplemented
+    @abstractmethod
+    def update_lead(self, product: LeadEntity) -> LeadEntity:
+        raise NotImplemented
