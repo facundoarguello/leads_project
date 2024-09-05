@@ -98,7 +98,7 @@ Para ejecutar las pruebas del proyecto utilizando **Docker Compose**, sigue esto
 3. Ejecuta el siguiente comando para levantar los servicios definidos en Docker Compose:
 
    ```bash
-   docker-compose up --build
+   sudo docker-compose up --build
 
    Esto construirá las imágenes de Docker (si es necesario) y levantará los contenedores correspondientes a la aplicación, base de datos, etc.
 
